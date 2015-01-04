@@ -1,7 +1,5 @@
 #include "Vector2.h"
 
-double vector [2];
-
 Vector2::Vector2(double x, double y)
 {
 	vector[0] = x;
@@ -15,7 +13,7 @@ Vector2::~Vector2()
 
 double Vector2::dotProduct(Vector2 vector2)
 {
-	return (vector[0] * vector2.getX) + (vector[1] * vector2.getY);
+	return (vector[0] * vector2.getX()) + (vector[1] * vector2.getY());
 }
 
 Vector2 Vector2::crossProduct()
@@ -25,10 +23,20 @@ Vector2 Vector2::crossProduct()
 
 double Vector2::crossProduct(Vector2 vector2)
 {
-	return (vector[0] * vector2.getY) - (vector[1] * vector2.getX);
+	return (vector[0] * vector2.getY()) - (vector[1] * vector2.getX());
 }
 
 double* Vector2::getVector()
 {
 	return vector;
+}
+
+double Vector2::getX()
+{
+	return vector[0];
+}
+
+double Vector2::getY()
+{
+	return vector[1];
 }

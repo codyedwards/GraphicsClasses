@@ -14,8 +14,8 @@ public:
 	double Vector2::getY();
 	Vector2& operator+=(const Vector2& rhs)
 	{                       
-		vector[0] += rhs.getX;
-		vector[1] += rhs.getY;
+		vector[0] += rhs.vector[0];
+		vector[1] += rhs.vector[1];
 		return *this; 
 	}
 
@@ -26,8 +26,8 @@ public:
 
 	Vector2& operator-=(const Vector2& rhs)
 	{
-		vector[0] -= rhs.getX;
-		vector[1] -= rhs.getY;
+		vector[0] -= rhs.vector[0];
+		vector[1] -= rhs.vector[1];
 		return *this;
 	}
 
@@ -43,7 +43,7 @@ public:
 		return *this;
 	}
 
-	friend Vector2 operator*(Vector2 lhs, const Vector2& rhs)
+	friend Vector2 operator*(Vector2 lhs, double rhs)
 	{
 		return lhs *= rhs;
 	}
@@ -55,9 +55,12 @@ public:
 		return *this;
 	}
 
-	friend Vector2 operator/(Vector2 lhs, const Vector2& rhs)
+	friend Vector2 operator/(Vector2 lhs, double rhs)
 	{
 		return lhs /= rhs;
 	}
+
+private:
+	double vector[2];
 };
 
