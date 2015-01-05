@@ -136,7 +136,7 @@ void testVector3()
 
 int main(int argc, char *argv[])
 {
-	//testVector2();
+	testVector2();
 
 	testVector3();
 
